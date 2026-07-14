@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaira Itzel Sánchez Mex | English Educator & Consultant</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display para una combinación tipográfica sofisticada -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bone: '#F8F6F0',       // Blanco hueso principal
+                        navy: {
+                            light: '#1B3B5F',
+                            DEFAULT: '#0F2537', // Azul marino corporativo y elegante
+                            dark: '#081420'
+                        },
+                        mustard: {
+                            light: '#E2AB3D',
+                            DEFAULT: '#D49B2A', // Amarillo mostaza para llamadas a la acción
+                            dark: '#A6771C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animaciones a medida para reforzar el acabado UI/UX */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .bg-pattern {
+            background-color: #F8F6F0;
+            background-image: radial-gradient(#0f2537 0.5px, transparent 0.5px), radial-gradient(#0f2537 0.5px, #f8f6f0 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.03;
+        }
+    </style>
+</head>
+<body class="bg-bone text-navy font-sans antialiased selection:bg-mustard selection:text-navy">
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-bone/90 backdrop-blur-md border-b border-navy/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+            <!-- Logo/Marca -->
+            <a href="#hero" class="group flex items-center gap-2">
+                <span class="font-serif text-xl md:text-2xl font-bold tracking-tight text-navy group-hover:text-mustard transition-colors duration-300">
+                    Zaira Itzel S.<span class="text-mustard">.</span>
+                </span>
+            </a>
+
+            <!-- Navegación de Escritorio -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#sobre-mi" class="text-sm font-medium hover:text-mustard transition-colors duration-200">Sobre mí</a>
+                <a href="#servicios" class="text-sm font-medium hover:text-mustard transition-colors duration-200">Servicios</a>
+                <a href="#portafolio" class="text-sm font-medium hover:text-mustard transition-colors duration-200">Portafolio</a>
+                <a href="#testimonios" class="text-sm font-medium hover:text-mustard transition-colors duration-200">Testimonios</a>
+                <a href="#contacto" class="text-sm font-medium px-5 py-2.5 bg-navy text-bone rounded-lg hover:bg-mustard hover:text-navy transition-all duration-300 shadow-sm hover:shadow">Contacto</a>
+            </nav>
+
+            <!-- Botón de Menú Móvil -->
+            <button id="mobile-menu-btn" class="md:hidden text-navy focus:outline-none p-2" aria-label="Abrir menú">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Menú desplegable móvil -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-bone border-b border-navy/10 py-6 px-8 flex flex-col gap-5 shadow-lg transition-all duration-300">
+            <a href="#sobre-mi" class="mobile-link text-lg font-medium py-2">Sobre mí</a>
+            <a href="#servicios" class="mobile-link text-lg font-medium py-2">Servicios</a>
+            <a href="#portafolio" class="mobile-link text-lg font-medium py-2">Portafolio</a>
+            <a href="#testimonios" class="mobile-link text-lg font-medium py-2">Testimonios</a>
+            <a href="#contacto" class="mobile-link text-center text-base font-medium py-3 bg-navy text-bone rounded-lg hover:bg-mustard hover:text-navy transition-colors">Contáctame</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+        <!-- Fondo Decorativo Sutil -->
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+        <div class="absolute -top-48 -right-48 w-96 h-96 rounded-full bg-mustard/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-48 -left-48 w-96 h-96 rounded-full bg-navy/5 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full z-10">
+            <!-- Columna de Texto -->
+            <div class="lg:col-span-7 space-y-8 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-navy/5 rounded-full border border-navy/10 text-xs font-semibold tracking-wider text-navy uppercase">
+                    <span class="w-2 h-2 rounded-full bg-mustard animate-pulse"></span> Metodología Comunicativa Práctica
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-navy font-bold leading-[1.1] tracking-tight">
+                    Domina el inglés. <br>
+                    <span class="text-mustard underline decoration-navy/10 decoration-wavy underline-offset-8">Abre las puertas</span> <br>
+                    de tu mundo global.
+                </h1>
+
+                <p class="text-navy/80 text-lg md:text-xl font-light max-w-xl leading-relaxed">
+                    Aprende con un enfoque centrado en la persona, metodologías activas y aprendizaje significativo. Soy Zaira Itzel, y mi misión es estructurar tu éxito bilingüe de forma ágil y profesional.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="#contacto" class="px-8 py-4 bg-mustard text-navy font-semibold rounded-xl text-center shadow-lg shadow-mustard/20 hover:bg-mustard-dark hover:translate-y-[-2px] hover:shadow-xl transition-all duration-300">
+                        Agenda una Sesión Inicial
+                    </a>
+                    <a href="#servicios" class="px-8 py-4 border border-navy/20 text-navy font-semibold rounded-xl text-center hover:bg-navy hover:text-bone hover:border-navy hover:translate-y-[-2px] transition-all duration-300">
+                        Ver Servicios
+                    </a>
+                </div>
+
+                <!-- Estadísticas Rápidas -->
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-navy/10 max-w-lg">
+                    <div>
+                        <p class="text-3xl font-bold text-navy font-serif">100%</p>
+                        <p class="text-xs text-navy/60 font-medium uppercase tracking-wider">Metodología Activa</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-navy font-serif">8+</p>
+                        <p class="text-xs text-navy/60 font-medium uppercase tracking-wider">Años de Experiencia</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-navy font-serif">500+</p>
+                        <p class="text-xs text-navy/60 font-medium uppercase tracking-wider">Alumnos Formados</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna de Imagen / Ilustración Minimalista -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+                    <!-- Marcos estéticos decorativos -->
+                    <div class="absolute inset-0 border-2 border-mustard rounded-3xl translate-x-4 translate-y-4 transition-transform duration-500 hover:translate-x-2 hover:translate-y-2"></div>
+                    <!-- Contenedor de la Imagen -->
+                    <div class="absolute inset-0 bg-navy rounded-3xl overflow-hidden flex items-center justify-center shadow-2xl">
+                        <!-- Reemplazar con imagen real cuando sea cargada. Usamos SVG vectorial e interactivo para emular un perfil impecable -->
+                        <div class="text-center p-8 text-bone z-10 select-none">
+                            <i data-lucide="graduation-cap" class="w-16 h-16 mx-auto text-mustard mb-4"></i>
+                            <h3 class="font-serif text-2xl font-bold">Zaira Itzel Sánchez</h3>
+                            <p class="text-sm text-bone/70 mt-1">Educadora Profesional de Inglés</p>
+                            <span class="inline-block mt-4 text-xs font-mono px-3 py-1 bg-bone/10 rounded-full text-mustard border border-mustard/30">ELT Certified</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí Section (Impacto & Enfoque) -->
+    <section id="sobre-mi" class="py-24 bg-navy text-bone relative overflow-hidden">
+        <!-- Detalles geométricos sutiles -->
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-bone/[0.02] -skew-x-12"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Imagen / Detalle Visual -->
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="bg-bone/5 rounded-3xl p-8 border border-bone/10 relative overflow-hidden">
+                        <i data-lucide="quote" class="absolute -top-6 -left-4 w-32 h-32 text-bone/[0.03] pointer-events-none"></i>
+                        <p class="font-serif text-xl italic text-mustard leading-relaxed mb-6">
+                            "El idioma no es solo un conjunto de reglas gramaticales, sino el puente directo hacia nuevas conexiones humanas y profesionales."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-mustard flex items-center justify-center text-navy font-bold">
+                                ZS
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Zaira Itzel Sánchez Mex</h4>
+                                <p class="text-xs text-bone/60">Especialista en Enseñanza del Idioma Inglés</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                    <p class="text-mustard text-xs font-bold tracking-widest uppercase">My Philosophy</p>
+                    <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-bone">
+                        Conectando mentes a través de la educación bilingüe activa.
+                    </h2>
+                    
+                    <div class="space-y-4 text-bone/80 font-light leading-relaxed text-base md:text-lg">
+                        <p>
+                            ¡Hola! Soy <strong class="text-mustard font-medium">Zaira Itzel Sánchez Mex</strong>. Creo firmemente que la educación debe romper barreras tradicionales. Mi pasión es diseñar experiencias de aprendizaje dinámicas, estructuradas pero flexibles, que respeten los ritmos individuales sin perder la rigurosidad académica.
+                        </p>
+                        <p>
+                            A través de mi experiencia, he perfeccionado metodologías didácticas que priorizan la expresión oral, el pensamiento crítico y la asimilación natural de estructuras complejas, preparando a mis estudiantes no solo para pasar un examen, sino para desempeñarse en el mundo profesional real.
+                        </p>
+                    </div>
+
+                    <!-- Enfoques de Enseñanza (Mini Tarjetas) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-bone/10 flex items-center justify-center text-mustard flex-shrink-0">
+                                <i data-lucide="target" class="w-5 h-5"></i>
+                            </span>
+                            <div>
+                                <h5 class="font-semibold text-sm">Metodología Orientada a Metas</h5>
+                                <p class="text-xs text-bone/60">Diseñamos el plan en base a tus objetivos específicos de carrera o estudio.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-bone/10 flex items-center justify-center text-mustard flex-shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </span>
+                            <div>
+                                <h5 class="font-semibold text-sm">Flexibilidad & Autonomía</h5>
+                                <p class="text-xs text-bone/60">Recursos digitales interactivos diseñados para el aprendizaje asíncrono autodirigido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section (Las 3 Tarjetas) -->
+    <section id="servicios" class="py-24 bg-bone">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Encabezado de la Sección -->
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-mustard text-xs font-bold tracking-widest uppercase">Nuestras Soluciones</span>
+                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy">
+                    Servicios de alta excelencia educativa
+                </h2>
+                <div class="w-16 h-1 bg-mustard mx-auto rounded-full"></div>
+                <p class="text-navy/70 font-light text-base md:text-lg">
+                    Programas estructurados meticulosamente para asegurar un progreso continuo, fluido y medible.
+                </p>
+            </div>
+
+            <!-- Grilla de Tarjetas -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="group bg-white rounded-2xl p-8 border border-navy/5 shadow-sm hover:shadow-xl hover:border-mustard/30 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-xl bg-mustard/10 flex items-center justify-center text-mustard group-hover:bg-mustard group-hover:text-navy transition-all duration-300">
+                            <i data-lucide="message-square-code" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy font-serif">Conversational Coaching</h3>
+                        <p class="text-navy/70 text-sm font-light leading-relaxed">
+                            Sesiones personalizadas de inmersión total centradas en desbloquear tu expresión oral y pronunciación. Olvídate del miedo a hablar inglés en público o en el trabajo.
+                        </p>
+                        <ul class="space-y-2.5 pt-2">
+                            <li class="flex items-center gap-2 text-xs text-navy/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Roleplays de situaciones de la vida real
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-navy/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Pronunciación y entonación nativa
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-navy/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Enfoque dinámico sin rodeos teóricos
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-8 mt-6 border-t border-navy/5 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-navy/40">Duración libre</span>
+                        <a href="#contacto" class="text-sm font-semibold text-mustard flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                            Me interesa <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="group bg-navy text-bone rounded-2xl p-8 border border-navy/10 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-mustard/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="space-y-6 relative z-10">
+                        <div class="w-12 h-12 rounded-xl bg-mustard flex items-center justify-center text-navy">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-mustard font-semibold bg-mustard/10 px-2 py-1 rounded">Altamente Solicitado</span>
+                            <h3 class="text-xl font-bold text-bone font-serif mt-2">Inglés Académico e Institucional</h3>
+                        </div>
+                        <p class="text-bone/70 text-sm font-light leading-relaxed">
+                            Preparación robusta para certificaciones oficiales, redacción académica y desarrollo de habilidades pedagógicas en ambientes bilingües.
+                        </p>
+                        <ul class="space-y-2.5 pt-2">
+                            <li class="flex items-center gap-2 text-xs text-bone/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Preparación IELTS, TOEFL, Cambridge
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-bone/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Escritura ensayística y ortografía formal
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-bone/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Simulacros y material digital incluido
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-8 mt-6 border-t border-bone/10 flex items-center justify-between relative z-10">
+                        <span class="text-xs font-semibold text-bone/40">Esquema modular</span>
+                        <a href="#contacto" class="text-sm font-semibold text-mustard flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                            Me interesa <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="group bg-white rounded-2xl p-8 border border-navy/5 shadow-sm hover:shadow-xl hover:border-mustard/30 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-xl bg-mustard/10 flex items-center justify-center text-mustard group-hover:bg-mustard group-hover:text-navy transition-all duration-300">
+                            <i data-lucide="book-open-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy font-serif">Mentorías y Materiales Didácticos</h3>
+                        <p class="text-navy/70 text-sm font-light leading-relaxed">
+                            Para otros docentes u organizaciones educativas. Consultorías en diseño curricular, planeaciones didácticas eficaces y creación de materiales multimedia interactivos.
+                        </p>
+                        <ul class="space-y-2.5 pt-2">
+                            <li class="flex items-center gap-2 text-xs text-navy/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Consultoría en currículo escolar
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-navy/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Diseño instruccional digital
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-navy/80 font-medium">
+                                <i data-lucide="check" class="w-4 h-4 text-mustard"></i> Talleres formativos de pedagogía ELT
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-8 mt-6 border-t border-navy/5 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-navy/40">Bajo demanda</span>
+                        <a href="#contacto" class="text-sm font-semibold text-mustard flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                            Me interesa <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio Section -->
+    <section id="portafolio" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Encabezado -->
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-4 max-w-2xl">
+                    <span class="text-mustard text-xs font-bold tracking-widest uppercase">Portafolio</span>
+                    <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy">
+                        Metodología Aplicada
+                    </h2>
+                    <p class="text-navy/70 font-light text-base">
+                        Explora una selección de mis recursos, planeaciones, guías interactivas y proyectos didácticos de muestra.
+                    </p>
+                </div>
+                <!-- Filtros Interactivos -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="portfolio-filter-btn px-4 py-2 text-xs font-bold rounded-lg bg-navy text-bone border border-navy transition-all duration-300" data-filter="all">Todos</button>
+                    <button class="portfolio-filter-btn px-4 py-2 text-xs font-bold rounded-lg border border-navy/10 text-navy hover:border-mustard transition-all duration-300" data-filter="guias">Guías de Estudio</button>
+                    <button class="portfolio-filter-btn px-4 py-2 text-xs font-bold rounded-lg border border-navy/10 text-navy hover:border-mustard transition-all duration-300" data-filter="recursos">Recursos Interactivos</button>
+                    <button class="portfolio-filter-btn px-4 py-2 text-xs font-bold rounded-lg border border-navy/10 text-navy hover:border-mustard transition-all duration-300" data-filter="diseno">Currículo & Diseño</button>
+                </div>
+            </div>
+
+            <!-- Grilla del Portafolio -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                <!-- Item 1 (Guías) -->
+                <div class="portfolio-item group bg-bone rounded-2xl overflow-hidden border border-navy/5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="guias">
+                    <div class="h-48 bg-navy flex items-center justify-center p-6 relative overflow-hidden text-center">
+                        <div class="absolute inset-0 bg-pattern opacity-10"></div>
+                        <div class="relative z-10 space-y-2">
+                            <span class="inline-block text-[10px] uppercase font-bold text-mustard bg-mustard/10 px-2 py-0.5 rounded">PDF Descargable</span>
+                            <h4 class="text-bone font-serif font-bold text-lg leading-tight">Mastering Phrasal Verbs</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-2 text-xs font-medium text-mustard uppercase tracking-wider">
+                            <span>Metodología ELT</span> • <span>E-Book</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy font-serif">Guía Visual de Phrasal Verbs de Uso Diario</h3>
+                        <p class="text-navy/70 text-xs font-light leading-relaxed">
+                            Un recurso dinámico y altamente visual diseñado para estudiantes que buscan adquirir fluidez natural sin memorizar listas infinitas.
+                        </p>
+                        <button onclick="simulateDownload('Guía de Phrasal Verbs')" class="w-full py-2.5 border border-navy/10 hover:border-mustard text-navy hover:text-mustard text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300">
+                            <i data-lucide="download" class="w-4 h-4"></i> Descargar Muestra Gratuita
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2 (Recursos) -->
+                <div class="portfolio-item group bg-bone rounded-2xl overflow-hidden border border-navy/5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="recursos">
+                    <div class="h-48 bg-navy flex items-center justify-center p-6 relative overflow-hidden text-center">
+                        <div class="absolute inset-0 bg-pattern opacity-10"></div>
+                        <div class="relative z-10 space-y-2">
+                            <span class="inline-block text-[10px] uppercase font-bold text-mustard bg-mustard/10 px-2 py-0.5 rounded">Plataforma Interactiva</span>
+                            <h4 class="text-bone font-serif font-bold text-lg leading-tight">Dynamic Conversation Cards</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-2 text-xs font-medium text-mustard uppercase tracking-wider">
+                            <span>Herramienta Interactiva</span> • <span>EdTech</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy font-serif">Tarjetas Interactivas de Diálogo Conversacional</h3>
+                        <p class="text-navy/70 text-xs font-light leading-relaxed">
+                            Set digital de disparadores lingüísticos interactivos para desatar discusiones estructuradas en grupos de niveles B2-C1.
+                        </p>
+                        <button onclick="simulateLaunch('Conversational Cards')" class="w-full py-2.5 border border-navy/10 hover:border-mustard text-navy hover:text-mustard text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> Probar Demo en Vivo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3 (Diseño) -->
+                <div class="portfolio-item group bg-bone rounded-2xl overflow-hidden border border-navy/5 shadow-sm hover:shadow-xl transition-all duration-300" data-category="diseno">
+                    <div class="h-48 bg-navy flex items-center justify-center p-6 relative overflow-hidden text-center">
+                        <div class="absolute inset-0 bg-pattern opacity-10"></div>
+                        <div class="relative z-10 space-y-2">
+                            <span class="inline-block text-[10px] uppercase font-bold text-mustard bg-mustard/10 px-2 py-0.5 rounded">Diseño Curricular</span>
+                            <h4 class="text-bone font-serif font-bold text-lg leading-tight">Corporate Language Program</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-2 text-xs font-medium text-mustard uppercase tracking-wider">
+                            <span>Syllabus Design</span> • <span>B2B</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy font-serif">Programa de Negocios Corporativos</h3>
+                        <p class="text-navy/70 text-xs font-light leading-relaxed">
+                            Muestra estructurada de planeación de clases y materiales a medida orientados a equipos del rubro de TI y desarrollo de software.
+                        </p>
+                        <button onclick="simulateDownload('Programa de Negocios Corporativos')" class="w-full py-2.5 border border-navy/10 hover:border-mustard text-navy hover:text-mustard text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300">
+                            <i data-lucide="download" class="w-4 h-4"></i> Descargar Syllabus
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section id="testimonios" class="py-24 bg-navy text-bone relative overflow-hidden">
+        <div class="absolute -top-48 -left-48 w-96 h-96 rounded-full bg-mustard/5 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <!-- Encabezado de la Sección -->
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-mustard text-xs font-bold tracking-widest uppercase">Opiniones reales</span>
+                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-bone">
+                    Lo que mis estudiantes comparten
+                </h2>
+                <div class="w-16 h-1 bg-mustard mx-auto rounded-full"></div>
+                <p class="text-bone/70 font-light text-base">
+                    Testimonios de profesionales y alumnos que transformaron su relación con el inglés bajo mi acompañamiento.
+                </p>
+            </div>
+
+            <!-- Grilla de Testimonios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-bone/5 rounded-2xl p-8 border border-bone/10 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-mustard">
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                        </div>
+                        <p class="text-bone/80 text-sm font-light italic leading-relaxed">
+                            "Las clases con Zaira cambiaron por completo mi enfoque. Antes me limitaba mucho a traducir todo mentalmente. Su metodología dinámica me hizo empezar a estructurar y pensar directamente en inglés desde el primer mes."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-6 border-t border-bone/10">
+                        <div class="w-10 h-10 rounded-full bg-mustard flex items-center justify-center text-navy font-bold text-xs">
+                            AM
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold">Alejandra Martínez</h4>
+                            <p class="text-xs text-bone/50">Project Manager en Tecnología</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-bone/5 rounded-2xl p-8 border border-bone/10 space-y-6 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-8 text-mustard/10">
+                        <i data-lucide="quote" class="w-12 h-12"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-mustard">
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                        </div>
+                        <p class="text-bone/80 text-sm font-light italic leading-relaxed">
+                            "Como docente colega, acudí a Zaira para asesorías en diseño didáctico digital. Su dominio de herramientas EdTech y diseño instruccional es brillante. Estructuró mi temario de forma inigualable."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-6 border-t border-bone/10">
+                        <div class="w-10 h-10 rounded-full bg-mustard flex items-center justify-center text-navy font-bold text-xs">
+                            JG
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold">Juan Pablo Gómez</h4>
+                            <p class="text-xs text-bone/50">Profesor de Idiomas Universitarios</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-bone/5 rounded-2xl p-8 border border-bone/10 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-mustard">
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-mustard"></i>
+                        </div>
+                        <p class="text-bone/80 text-sm font-light italic leading-relaxed">
+                            "Logré obtener mi certificación IELTS con una banda superior a la requerida para mi maestría en Canadá. El plan intensivo personalizado y las correcciones de redacción escrita que Zaira me dio marcaron la diferencia."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-6 border-t border-bone/10">
+                        <div class="w-10 h-10 rounded-full bg-mustard flex items-center justify-center text-navy font-bold text-xs">
+                            DR
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold">Diana Ruiz</h4>
+                            <p class="text-xs text-bone/50">Estudiante de Postgrado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-24 bg-bone relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <!-- Información Lateral -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-mustard text-xs font-bold tracking-widest uppercase">Contáctame</span>
+                        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy">
+                            Iniciemos tu trayecto hoy
+                        </h2>
+                        <div class="w-16 h-1 bg-mustard rounded-full"></div>
+                        <p class="text-navy/70 font-light text-base leading-relaxed">
+                            ¿Tienes dudas, deseas una cotización para un grupo corporativo o agendar un examen diagnóstico personalizado? Escríbeme y diseñemos juntos tu ruta de aprendizaje ideal.
+                        </p>
+                    </div>
+
+                    <!-- Canales de Contacto Directo -->
+                    <div class="space-y-6 pt-4">
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center text-navy">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-navy/50 uppercase tracking-wider">Correo Electrónico</h4>
+                                <a href="mailto:zairaitzelsm@gmail.com" class="text-sm font-medium hover:text-mustard transition-colors">zaira.itzel.sm@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center text-navy">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-navy/50 uppercase tracking-wider">Ubicación</h4>
+                                <p class="text-sm font-medium">Quintana Roo, México / Sesiones en línea globales</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center text-navy">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-navy/50 uppercase tracking-wider">Respuesta estimada</h4>
+                                <p class="text-sm font-medium">Menos de 24 horas laborables</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario Profesional -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-8 md:p-12 border border-navy/5 shadow-xl">
+                    <form id="contactForm" class="space-y-6" onsubmit="handleContactSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Nombre -->
+                            <div class="space-y-2">
+                                <label for="name" class="text-xs font-bold uppercase tracking-wider text-navy/60">Nombre Completo</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 bg-bone rounded-xl border border-transparent focus:border-mustard focus:bg-white focus:outline-none transition-all duration-300 text-sm text-navy font-medium" placeholder="Tu nombre">
+                            </div>
+                            <!-- Email -->
+                            <div class="space-y-2">
+                                <label for="email" class="text-xs font-bold uppercase tracking-wider text-navy/60">Correo Electrónico</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 bg-bone rounded-xl border border-transparent focus:border-mustard focus:bg-white focus:outline-none transition-all duration-300 text-sm text-navy font-medium" placeholder="correo@ejemplo.com">
+                            </div>
+                        </div>
+
+                        <!-- Servicio de Interés -->
+                        <div class="space-y-2">
+                            <label for="interest" class="text-xs font-bold uppercase tracking-wider text-navy/60">¿En qué estás interesado?</label>
+                            <select id="interest" required class="w-full px-4 py-3 bg-bone rounded-xl border border-transparent focus:border-mustard focus:bg-white focus:outline-none transition-all duration-300 text-sm text-navy font-medium">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="coaching">Conversational Coaching (Personalizado)</option>
+                                <option value="academic">Inglés Académico & Preparación de Exámenes</option>
+                                <option value="mentorship">Mentorías de Pedagogía & Diseño de Recursos</option>
+                                <option value="corporate">Capacitación B2B / Corporativa</option>
+                                <option value="other">Otro asunto / Colaboración</option>
+                            </select>
+                        </div>
+
+                        <!-- Mensaje -->
+                        <div class="space-y-2">
+                            <label for="message" class="text-xs font-bold uppercase tracking-wider text-navy/60">¿Cómo puedo ayudarte?</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-3 bg-bone rounded-xl border border-transparent focus:border-mustard focus:bg-white focus:outline-none transition-all duration-300 text-sm text-navy font-medium resize-none" placeholder="Cuéntame sobre tus metas u objetivos..."></textarea>
+                        </div>
+
+                        <!-- Estado del Mensaje Exitoso (Oculto por defecto) -->
+                        <div id="form-success-banner" class="hidden flex items-start gap-3 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 flex-shrink-0 text-emerald-600 mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">¡Mensaje enviado exitosamente!</h4>
+                                <p class="text-xs text-emerald-700/90 mt-1">Gracias por contactarme, Zaira se pondrá en comunicación contigo muy pronto.</p>
+                            </div>
+                        </div>
+
+                        <!-- Botón Enviar -->
+                        <button type="submit" class="w-full py-4 bg-mustard hover:bg-mustard-dark text-navy font-bold rounded-xl shadow-lg shadow-mustard/10 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-navy-dark text-bone/60 py-16 border-t border-bone/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Col 1: Marca -->
+                <div class="space-y-4 md:col-span-2">
+                    <h3 class="font-serif text-2xl font-bold tracking-tight text-bone">
+                        Zaira Itzel Sánchez Mex<span class="text-mustard">.</span>
+                    </h3>
+                    <p class="text-sm text-bone/50 max-w-sm font-light leading-relaxed">
+                        Comprometida con brindar educación de inglés de alto valor profesional y pedagógico, uniendo habilidades lingüísticas y confianza humana.
+                    </p>
+                </div>
+
+                <!-- Col 2: Enlaces Rápidos -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-bone">Explorar</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#sobre-mi" class="hover:text-mustard transition-colors">Sobre mí</a></li>
+                        <li><a href="#servicios" class="hover:text-mustard transition-colors">Servicios</a></li>
+                        <li><a href="#portafolio" class="hover:text-mustard transition-colors">Portafolio</a></li>
+                        <li><a href="#testimonios" class="hover:text-mustard transition-colors">Testimonios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legal / Social -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-bone">Contacto Digital</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="mailto:zairaitzelsm@gmail.com" class="hover:text-mustard transition-colors">Email Directo</a></li>
+                        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-mustard transition-colors">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divisor e Información de Derechos Autor -->
+            <div class="pt-8 border-t border-bone/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 Zaira Itzel Sánchez Mex. Todos los derechos reservados.</p>
+                <div class="flex items-center gap-6">
+                    <span class="hover:text-mustard transition-colors">English Pedagogy & Design Portfolio</span>
+                    <a href="#" class="hover:text-mustard transition-colors">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Banner de Simulación de Acciones Portafolio (Interactivo) -->
+    <div id="simulated-action-banner" class="fixed bottom-6 right-6 z-50 bg-navy text-bone border border-mustard/30 px-5 py-4 rounded-xl shadow-2xl flex items-center gap-4 transition-all duration-300 translate-y-24 opacity-0 max-w-sm">
+        <span class="p-2 rounded-lg bg-mustard text-navy">
+            <i data-lucide="info" class="w-5 h-5"></i>
+        </span>
+        <div>
+            <h5 class="font-bold text-xs" id="simulated-title">Acción Simulada</h5>
+            <p class="text-[10px] text-bone/70 mt-0.5" id="simulated-subtitle">Descripción del evento</p>
+        </div>
+        <button onclick="dismissSimulatedBanner()" class="text-bone/40 hover:text-bone/80 p-1">
+            <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Inicialización de Iconos de Lucide
+        lucide.createIcons();
+
+        // Control de menú móvil
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                menuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                menuIcon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Filtrado dinámico de portafolio
+        const filterButtons = document.querySelectorAll('.portfolio-filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Actualizar estado de botones
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-navy', 'text-bone');
+                    btn.classList.add('border-navy/10', 'text-navy');
+                });
+                button.classList.add('bg-navy', 'text-bone');
+                button.classList.remove('border-navy/10', 'text-navy');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (filterValue === 'all' || filterValue === itemCategory) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.style.opacity = '1', 50);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => item.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Manejador del Formulario de Contacto
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const banner = document.getElementById('form-success-banner');
+            banner.classList.remove('hidden');
+            
+            // Simular limpieza de formulario
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('interest').value = '';
+            document.getElementById('message').value = '';
+
+            setTimeout(() => {
+                banner.classList.add('hidden');
+            }, 8000);
+        }
+
+        // Banners Interactivos para Portafolio
+        function simulateDownload(resourceName) {
+            showSimulatedBanner(
+                "¡Descarga Iniciada!",
+                `Has descargado el archivo muestra de: ${resourceName} exitosamente.`
+            );
+        }
+
+        function simulateLaunch(demoName) {
+            showSimulatedBanner(
+                "Iniciando Demostración",
+                `Abriendo el sandbox didáctico e interactivo de: ${demoName}.`
+            );
+        }
+
+        function showSimulatedBanner(title, subtitle) {
+            const banner = document.getElementById('simulated-action-banner');
+            document.getElementById('simulated-title').textContent = title;
+            document.getElementById('simulated-subtitle').textContent = subtitle;
+
+            banner.classList.remove('translate-y-24', 'opacity-0');
+            banner.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                dismissSimulatedBanner();
+            }, 6000);
+        }
+
+        function dismissSimulatedBanner() {
+            const banner = document.getElementById('simulated-action-banner');
+            banner.classList.add('translate-y-24', 'opacity-0');
+            banner.classList.remove('translate-y-0', 'opacity-100');
+        }
+
+        // Cambio de estilo del Header en Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md', 'py-1');
+                navbar.classList.remove('border-b', 'border-navy/5');
+            } else {
+                navbar.classList.remove('shadow-md', 'py-1');
+                navbar.classList.add('border-b', 'border-navy/5');
+            }
+        });
+    </script>
+</body>
+</html>
